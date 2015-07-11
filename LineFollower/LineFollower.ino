@@ -1,6 +1,6 @@
 //photoResistor
-int protentiometer = 2;  // we are using pin A2
-int protentiometerVal = 0;    // we initialize the value of integer to 0
+int potentiometer = 2;  // we are using pin A2
+int potentiometerVal = 0;    // we initialize the value of integer to 0
 
 //photo transistor
 int photoTrans = 1;  // we are using pin A1
@@ -22,25 +22,25 @@ void setup() {
 }
 
 void loop() {
-  String titleProtentiometer = "Protentiometer  Read: "; // to make the reading easy to read
-  protentiometerVal = analogRead(protentiometer); // read the analog pin, and store value in to intVal 
-  Serial.println(titleProtentiometer + protentiometerVal); //debug value so we can see in realtime. 
+  String titlepotentiometer = "potentiometer  Read: "; // to make the reading easy to read
+  potentiometerVal = analogRead(potentiometer); // read the analog pin, and store value in to intVal 
+  Serial.println(titlepotentiometer + potentiometerVal); //debug value so we can see in realtime. 
 
   String titlePhotoTrans = "PhotoTransistor Read: "; // to make the reading easy to read
   photoVal = analogRead(photoTrans); // read the analog pin, and store value in to intVal 
   Serial.println(titlePhotoTrans + photoVal); //debug value so we can see in realtime. 
   //delay(200);
  
- if(photoVal < protentiometerVal){
+ if(photoVal < potentiometerVal){
     Serial.println("motor Right \n"); 
     motorRightON();
- }else if(photoVal > protentiometerVal){
+ }else if(photoVal > potentiometerVal){
     Serial.println("motor Left \n"); 
     motorLeftON();
  }else{
     
     }
-SOULIYO5
+
 }
 
 //Methods to runt the motor
